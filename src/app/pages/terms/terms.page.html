@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content>
+    <ion-card color="medium">
+      <ion-card-header>
+        <h2>Terminos y Condiciones</h2>
+        <ion-card-subtitle>Por favor, lea detenidamente estos términos y condiciones de uso 
+          antes de utilizar la aplicación. Al acceder o utilizar la Aplicación, 
+          usted acepta estar sujeto a estos Términos. Si no está de acuerdo con estos Términos, no utilice la Aplicación.</ion-card-subtitle>
+
+        <ion-card-title>1. Definiciones</ion-card-title>
+        <ion-card-subtitle>En estos Términos:
+            "Nosotros", "nuestro" o "la Aplicación" se refieren a DuocUC.
+            "Usuario" se refiere a cualquier persona que acceda o utilice la Aplicación.</ion-card-subtitle>
+
+        <ion-card-title>2. Uso Aceptable</ion-card-title>
+        <ion-card-subtitle>El usuario se compromete a utilizar la Aplicación de manera legal y ética. Esto incluye, pero no se limita a:
+
+          No realizar actividades ilegales, como el acceso no autorizado a sistemas o datos.
+          No usar la Aplicación para acosar, difamar, o amenazar a otros usuarios.
+          No realizar actividades que puedan dañar, sobrecargar o interrumpir el funcionamiento de la Aplicación.</ion-card-subtitle>
+
+        <ion-card-title>3. Contenido de la Aplicación</ion-card-title>
+        <ion-card-subtitle>El contenido de la Aplicación, incluyendo texto, imágenes, gráficos, y otros materiales, 
+          está protegido por derechos de autor y otros derechos de propiedad intelectual. 
+          El usuario no tiene derechos de propiedad sobre dicho contenido.</ion-card-subtitle>
+
+        <ion-card-title>4. Privacidad</ion-card-title>
+        <ion-card-subtitle>La recopilación y el uso de la información del usuario están sujetos a nuestra Política de Privacidad. 
+          Al utilizar la Aplicación, el usuario acepta la recopilación y el uso de sus datos de acuerdo con esta política.</ion-card-subtitle>
+
+        <ion-card-title>5. Responsabilidad y Garantías</ion-card-title>
+        <ion-card-subtitle>La Aplicación se proporciona "tal cual", sin garantías de ningún tipo. 
+          No garantizamos la disponibilidad ininterrumpida de la Aplicación ni su exactitud o confiabilidad. 
+          No somos responsables de ningún daño directo o indirecto que pueda resultar del uso de la Aplicación.</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+          <ion-label>Estoy de acuerdo.</ion-label>
+          <ion-checkbox color="dark" [(ngModel)]="checkedbtn" ></ion-checkbox>
+          <br>
+          <ion-button color="light" class="ok-btn" [disabled]="!checkedbtn" (click)="login() ">Aceptar</ion-button>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
