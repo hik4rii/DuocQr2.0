@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-item>
+    <ion-select label="Language/言語/Idioma" cancelText="Cancel" [(ngModel)]="idioma" (ionChange)="changeLang($event)">
+      <ion-select-option *ngFor="let lang of langs">{{ lang }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  
+    <ion-card color="medium">
+      <ion-card-header>
+        <h2>{{ "terms" | translate }}</h2>
+        <ion-card-subtitle>{{ "terms-sub" | translate }}</ion-card-subtitle>
+
+        <ion-card-title>{{ "terms-1" | translate }}</ion-card-title>
+        <ion-card-subtitle>{{ "terms-1-sub" | translate }}</ion-card-subtitle>
+            
+        <ion-card-title>{{ "terms-2" | translate }}</ion-card-title>
+        <ion-card-subtitle>{{ "terms-2-sub" | translate }}</ion-card-subtitle>
+
+        <ion-card-title>{{ "terms-3" | translate }}</ion-card-title>
+        <ion-card-subtitle>{{ "terms-3-sub" | translate }}</ion-card-subtitle>
+
+        <ion-card-title>{{ "terms-4" | translate }}</ion-card-title>
+        <ion-card-subtitle>{{ "terms-4-sub" | translate }}</ion-card-subtitle>
+
+        <ion-card-title>{{ "terms-5" | translate }}</ion-card-title>
+        <ion-card-subtitle>{{ "terms-5-sub" | translate }}</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+          <ion-label>{{ "agree" | translate }}</ion-label>
+          <ion-checkbox color="dark" [(ngModel)]="checkedbtn" ></ion-checkbox>
+          <br>
+          <ion-button color="light" class="ok-btn" [disabled]="!checkedbtn" (click)="login()">{{ "ok" | translate }}</ion-button>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

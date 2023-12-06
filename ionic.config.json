@@ -1,0 +1,8 @@
+{
+  "name": "registapp2",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

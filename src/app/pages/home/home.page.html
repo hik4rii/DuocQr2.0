@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- BOTON MENU-->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+    <!-- BOTON MENU-->
+    <ion-title >{{ "home" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<app-cartahome></app-cartahome>
+
+<ion-item>
+  <ion-label position="stacked">Seleccionar Nombre</ion-label>
+  <ion-select [(ngModel)]="selectedName" (ionChange)="onSearch()" placeholder="ubicación">
+    <ion-select-option *ngFor="let name of uniqueNames" [value]="name">{{ name }}</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<div *ngIf="airQualityData">
+  <ion-list>
+    <ion-item *ngFor="let item of airQualityData">
+      {{ item.nombre }} - {{ item.realtime[0]?.name }} - {{ item.realtime[0]?.tableRow?.status }}
+    </ion-item>
+  </ion-list>
+</div>
+
+<div class="location-info">
+  <p class="info-header">Tu ubicación actual:</p>
+  <p><strong>Latitud:</strong> {{ latitude }}</p>
+  <p><strong>Longitud:</strong> {{ longitude }}</p>
+</div>
+
+</ion-content>

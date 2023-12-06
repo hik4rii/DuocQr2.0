@@ -1,0 +1,30 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="centered">
+    <ion-card>
+      <img alt="LOGIs" src="https://i.imgur.com/VzQnKOg.png" />
+      <ion-card-header>
+        <ion-card-title>{{ "login" | translate }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content [formGroup]="loginForm">
+        <ion-item>
+          <ion-input #user [(ngModel)]="emailValue" formControlName="email" labelPlacement="floating" placeholder="johndoe@mail.com">
+            <div slot="label">{{ "enter-user" | translate }}</div>
+          </ion-input>
+        </ion-item>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">{{ "email-obligatory" | translate }}</ion-text>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">{{ "email-wrong" | translate }}</ion-text>
+        <ion-item>
+          <ion-input #pass type="password" [(ngModel)]="passValue" formControlName="password" labelPlacement="floating" placeholder="abc123">
+            <div slot="label">{{ "enter-pass" | translate }}</div>
+          </ion-input>
+        </ion-item>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">{{ "pass-obligatory" | translate }}</ion-text>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">{{ "pass-wrong" | translate }}</ion-text>
+        <ion-button (click)="login()">{{ "enter" | translate }}</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

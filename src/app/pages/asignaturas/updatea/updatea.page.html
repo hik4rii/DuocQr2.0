@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/asignaturas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ "update" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="asignatura">
+    <ion-card-content>
+      <ion-item>
+        <ion-input #nombre [(ngModel)]="asignatura.nombre" type="text" labelPlacement="floating" placeholder="Ej: Matematicas">
+          <div slot="label">{{ "name" | translate }}</div>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #sigla [(ngModel)]="asignatura.sigla" type="text" labelPlacement="floating" placeholder="Ej: MA0010">
+          <div slot="label">{{ "abb" | translate }}</div>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #seccion [(ngModel)]="asignatura.seccion" type="text" labelPlacement="floating" placeholder="Ej: 001D">
+          <div slot="label">{{ "section" | translate }}</div>
+        </ion-input>
+      </ion-item>
+      <ion-button color="secondary" (click)="updateAsignatura()">{{ "update" | translate }}</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

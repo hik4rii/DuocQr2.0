@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- bOTON Atras-->
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start" >
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="textcenter">{{ "detail" | translate }}</ion-title>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- cARTA -->
+  <ion-card *ngIf="asignatura">
+
+    <ion-card-header>
+      
+      <ion-card-title>{{ asignatura.nombre }}</ion-card-title>
+
+      <ion-card-subtitle>seccion: {{ asignatura.seccion }}</ion-card-subtitle>
+      <ion-card-subtitle>sigla: {{ asignatura.sigla }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+    <ion-button (click)="navigateToQR()" shape="round" class="centered">Generar QR</ion-button>
+   
+    <ion-button shape="round" class="centered" color="danger" (click)="deleteAsignatura()">{{ "delete" | translate }}</ion-button>
+    <ion-button color="warning" *ngIf="asignatura" [routerLink]="['/asignaturas/updatea', asignatura.id]" >{{ "update" | translate }}</ion-button>
+  </ion-card>
+
+ <!-- Carta Alumnos-->
+ <ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ "student-list" | translate }}</ion-card-title>
+    
+  </ion-card-header>
+  <ion-button (click)="generarusuariosrandom(20)" shape="round" class="centered">Agregar RandomUser</ion-button>
+  <ion-card-content >
+    <ion-list>
+      
+      <ion-item *ngFor="let aux of obtenerPagina()">
+        <ion-thumbnail slot="start">
+
+          <img [src]="obtenerFuenteImagen(aux)"/>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ aux.nombre }}</h2>
+          <h2>{{ aux.correo }}</h2>
+          <p >porcentaje asistenica : 100%</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="paginaAnterior()" shape="round" class="centered">Página anterior</ion-button>
+    <ion-button (click)="paginaSiguiente()" shape="round" class="centered">Siguiente página</ion-button>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

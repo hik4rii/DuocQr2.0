@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/asignaturas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ "add-student" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input #nombre [(ngModel)]="alumno.nombre" type="text" labelPlacement="floating" placeholder="Ej: Matematicas">
+          <div slot="label">{{ "name" | translate }}</div>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #correo [(ngModel)]="alumno.correo" type="text" labelPlacement="floating" placeholder="Ej: MA0010">
+          <div slot="label">{{ "email" | translate }}</div>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #contrasena [(ngModel)]="alumno.contrasena" type="text" labelPlacement="floating" placeholder="Ej: 001D">
+          <div slot="label">{{ "password" | translate }}</div>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #carrera [(ngModel)]="alumno.carrera" type="text" labelPlacement="floating" placeholder="Ej: 001D">
+          <div slot="label">{{ "career" | translate }}</div>
+      </ion-input>
+    </ion-item>
+      <ion-button color="secondary" (click)="createAlumno()">{{ "add" | translate }}</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
