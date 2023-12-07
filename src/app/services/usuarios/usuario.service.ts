@@ -15,6 +15,7 @@ export class UsuarioService {
   apiURL = 'https://apiappmovil-3elw.onrender.com';
   authDomain?: string;
   isAlumno?:boolean;
+  isAdmin?:boolean;
 
   constructor(private http: HttpClient) { 
     

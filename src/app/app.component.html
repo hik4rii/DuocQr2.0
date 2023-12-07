@@ -41,6 +41,33 @@
       </ion-content>
     </ion-menu>
 
+
+    <!-- Menú para Admin -->
+    <ion-menu contentId="main-content" type="overlay" *ngIf="usuarioService.isAdmin==true">
+      <ion-content>
+        <ion-list id="inbox-list" >
+          <ion-list-header>{{ "student-menu" | translate }}</ion-list-header>
+          <ion-note>{{ "student" | translate }}@duocuc.cl</ion-note>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appadmin; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label *ngIf="translateService.currentLang=='English'">{{ p.title }}</ion-label>
+              <ion-label *ngIf="translateService.currentLang=='Español'">{{ p.titulo }}</ion-label>
+              <ion-label *ngIf="translateService.currentLang=='Japanese'">{{ p.titlejp }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-item>
+          <ion-select cancelText="Cancel" label="Language/言語/Idioma" label-placement="stacked" placeholder="..." (ionChange)="changeLang($event)">
+            <ion-select-option *ngFor="let lang of langs">{{ lang }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-content>
+    </ion-menu>
+    
+
+    
+
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

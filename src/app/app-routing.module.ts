@@ -90,12 +90,18 @@ const routes: Routes = [
     path: 'presente',
     loadChildren: () => import('./pages/presente/presente.module').then( m => m.PresentePageModule)
   },
-
-
-
-
-
-
+  {
+    path: 'asignaturanotcrud',
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./pages/asignaturanotcrud/asignaturanotcrud.module').then( m => m.AsignaturanotcrudPageModule)     },
+      {
+        path: 'detallenotcrud/:id',
+        loadChildren: () => import('./pages/asignaturanotcrud/detallenotcrud/detallenotcrud.module').then(m => m.DetallenotcrudPageModule)
+      },
+    ]
+  },
 
 
 

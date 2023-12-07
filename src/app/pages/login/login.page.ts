@@ -101,13 +101,23 @@ export class LoginPage implements OnInit {
     if (this.emailValue && this.passValue) {
       if (this.emailValue.includes('@profesor.duocuc.cl')){
         this.usuarioService.isAlumno = false;
+        this.usuarioService.isAdmin = false;
       }if (this.emailValue.includes('@duocuc.cl')){
         this.usuarioService.isAlumno = true;
+        this.usuarioService.isAdmin = false;
+      }if (this.emailValue.includes('@admin.cl')){
+        this.usuarioService.isAdmin = true;
       }
       console.log(this.emailValue.includes('@duocuc.cl'))
       console.log(this.usuarioService.isAlumno)
       this.fireAuthService.login(this.emailValue, this.passValue);
-      this.mensajeUtil.mensajeToast('success',"Bienvenido al Sistema!",2000,'bottom');
+      if(this.translateService.currentLang=='English'){
+        this.mensajeUtil.mensajeToast('success', 'Welcome!'+ " " + this.emailValue, 2000, 'bottom')
+      }if(this.translateService.currentLang=='Español'){
+        this.mensajeUtil.mensajeToast('success', 'Bienvenido!'+ " " + this.emailValue, 2000, 'bottom')
+      }if(this.translateService.currentLang=='Japanese'){
+        this.mensajeUtil.mensajeToast('success', 'いらっしゃいませ！'+ " " + this.emailValue, 2000, 'bottom')
+      }
       //this.router.navigate(['home']);
     }   
   }

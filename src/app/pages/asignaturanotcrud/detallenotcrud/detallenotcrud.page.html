@@ -25,9 +25,9 @@
     <ion-card-content>
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
-    <ion-button (click)="navigateToQR()" shape="round" class="centered">Generar QR</ion-button>
-    <ion-button shape="round" class="centered" color="danger" (click)="deleteAsignatura()">{{ "delete" | translate }}</ion-button>
-    <ion-button shape="round" class="centered" color="warning" *ngIf="asignatura" [routerLink]="['/asignaturas/updatea', asignatura.id]" >{{ "update" | translate }}</ion-button>
+    <div *ngIf="usuarioService.isAlumno==false">
+      <ion-button (click)="navigateToQR()" shape="round" class="centered">Generar QR</ion-button>
+    </div>
   </ion-card>
 
  <!-- Carta Alumnos-->

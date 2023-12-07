@@ -23,17 +23,23 @@ export class AppComponent {
 
   public appprofe = [
     { titulo: 'Inicio', title: 'Home', titlejp: 'ホーム', url: 'home', icon: 'home' },
-    { titulo: 'Asignaturas', title:'Subjects', titlejp: '科目', url: 'asignaturas', icon: 'book' },
+    { titulo: 'Asignaturas', title:'Subjects', titlejp: '科目', url: 'asignaturanotcrud', icon: 'book' },
     { titulo: 'Cerrar Sesion ', title:'Log Out', titlejp:'ログアウト', url: 'login', icon: 'log-out' },
   ];
 
   public appalumno = [
     { titulo: 'Inicio', title: 'Home', titlejp: 'ホーム', url: 'home', icon: 'home' },
+    { titulo: 'Asignaturas', title:'Subjects', titlejp: '科目', url: 'asignaturanotcrud', icon: 'book' },
+    { titulo: 'Escanear QR', title:'QR Scanning', titlejp: 'QRスキャン', url: 'lectorqr', icon: 'qr-code' },
+    { titulo: 'Biblioteca Online', title:'Online Library', titlejp:'オンラインライブラリ', url: 'bibliotecaonline', icon: 'book' },
+    { titulo: 'Cerrar Sesion ', title:'Log Out', titlejp:'ログアウト', url: 'login', icon: 'log-out' },
+  ];
+
+  public appadmin = [
+    { titulo: 'Inicio', title: 'Home', titlejp: 'ホーム', url: 'home', icon: 'home' },
     { titulo: 'Asignaturas', title:'Subjects', titlejp: '科目', url: 'asignaturas', icon: 'book' },
     { titulo: 'Profesores', title : "Teachers", titlejp : "先生", url: 'profesores', icon: 'people' },
     { titulo: 'Alumnos', title : "Students", titlejp : "学生", url: 'alumnos', icon: 'people' },
-    { titulo: 'Escanear QR', title:'QR Scanning', titlejp: 'QRスキャン', url: 'lectorqr', icon: 'qr-code' },
-    { titulo: 'Biblioteca Online', title:'Online Library', titlejp:'オンラインライブラリ', url: 'bibliotecaonline', icon: 'book' },
     { titulo: 'Cerrar Sesion ', title:'Log Out', titlejp:'ログアウト', url: 'login', icon: 'log-out' },
   ];
 
